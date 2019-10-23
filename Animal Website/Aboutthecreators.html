@@ -1,80 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Animal Identifier</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About the Developers</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/3/yeti/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+
 </head>
 
 <body>
-  <div class="wrapper">
+
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Animal Identifier
-              <button type="button" onclick="window.location.href = 'AQIView1.html';" class="btn btn-info">About the Creators</button>
-            <img class="nav-ufo" src="static/images/ufo.svg">
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div class="hero text-center">
-      <h1>Animal Identifier</h1>
-      <p>Lions and tigers and bears, oh my!</p>
-    </div>
-    <div class="container">
-      <div class="row margin-top-50">
-        <div class="col-md-2">
-          <aside class="filters">
-            <div class="panel panel-default">
-              <div class="panel-heading">Image Search</div>
-              <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a URL</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                      </li>
-                    </ul>
-                  </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Type</button>
-                </form>
-              </div>
-            </div>
-          </aside>
-        </div>
-        <div class="col-md-10">
-          <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
-              <thead>
-                <tr>
-                  <!-- <th class="table-head">Date</th> -->
-                  <!-- <th class="table-head">City</th>
-                  <th class="table-head">State</th>
-                  <th class="table-head">Country</th> -->
-                  <th class="table-head">Shape</th>
-                  <!-- <th class="table-head">Duration</th> -->
-                  <th class="table-head">Comments</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
           </div>
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li><a href="aboutUs.html">About Us</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <span class="bottom">Animal Identifier</span>
-    </footer>
+      </nav>
+
+        <div class="container">
+            <div class="col-md-12">
+
+                <h1>About the Developers</h1>
+      
+                <p>Meet the faces behind this wonderful website!!</p>
+
+                <div class="row"> </div>
+
+            <div class="row">
+              <div class="col-md-4">
+
+                  <img src="../static/images/kyle.JPG" alt="..." class = "img-circle" height="200" width="200">
+                  <div class="caption">
+                    <h3>Kyle Lee</h3>
+                    <p>Kyle grew up in Massachusetts and is an avid Tom Brady fan. In his free time, Kyle enjoys playing soccer and building computers.</p>
+                    <p><a href="https://www.linkedin.com/in/kylejlee/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <img src="../static/images/chloe.jpg" alt="..." class = "img-circle" height="200" width="200">
+                    <div class="caption">
+                      <h3>Chloe Mayne </h3>
+                      <p>Chloe "West Coast, Best Coast" Mayne is a certified scuba diver! She loves coding, soccer, and the beach.</p>
+                      <p><a href="https://www.linkedin.com/in/chloe-mayne/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                    </div>
+                  </div>
+
+
+               <div class="col-md-4">
+
+                    <img src="../static/images/kristen.jpg" alt="..." class = "img-circle" height="200" width="200">
+                    <div class="caption">
+                      <h3>Kristen Hyman</h3>
+                      <p>Kristen  moved to D.C. from South Boston, and loves Tom Brady more than Kyle does. When she isn't coding, you can probably find her in the yoga studio!</p>
+                      <p><a href="https://www.linkedin.com/in/kristenhyman/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                    </div>
+                  </div>
+
+              <div class="col-md-4">
+
+                    <img src="../static/images/kristen.jpg" alt="..." class = "img-circle" height="200" width="200">
+                    <div class="caption">
+                      <h3>Kristen Hyman</h3>
+                      <p>Kristen  moved to D.C. from South Boston, and loves Tom Brady more than Kyle does. When she isn't coding, you can probably find her in the yoga studio!</p>
+                      <p><a href="https://www.linkedin.com/in/kristenhyman/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                    </div>
+                  </div>
+              
+                  <div class="col-md-4">
+
+                    <img src="../static/images/kristen.jpg" alt="..." class = "img-circle" height="200" width="200">
+                    <div class="caption">
+                      <h3>Kristen Hyman</h3>
+                      <p>Kristen  moved to D.C. from South Boston, and loves Tom Brady more than Kyle does. When she isn't coding, you can probably find her in the yoga studio!</p>
+                      <p><a href="https://www.linkedin.com/in/kristenhyman/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                    </div>
+                  </div>
+
+                <div class="col-md-4">
+
+                    <img src="../static/images/kristen.jpg" alt="..." class = "img-circle" height="200" width="200">
+                    <div class="caption">
+                      <h3>Kristen Hyman</h3>
+                      <p>Kristen  moved to D.C. from South Boston, and loves Tom Brady more than Kyle does. When she isn't coding, you can probably find her in the yoga studio!</p>
+                      <p><a href="https://www.linkedin.com/in/kristenhyman/" class="btn btn-primary" role="button">LinkedIn</a> </p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/js/data.js"></script>
-  <script src="static/js/app.js"></script>
+</div>
 </body>
 
 </html>
