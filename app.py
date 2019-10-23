@@ -1,8 +1,12 @@
 ########################################
 #              Imports
 ########################################
-from flask import Flask, jsonify, render_template, send_from_directory
-import pandas as pd
+
+import socket
+print(socket.gethostbyname(socket.getfqdn(socket.gethostname())))
+
+from flask import Flask
+app = Flask(__name__)
 
 ########################################
 #            Configuration
@@ -24,6 +28,12 @@ def home():
     print('test')
     return render_template("index.html")
 
+
+@app.route("/analyze")
+def analyze():
+
+
+
 # Section 2 - API Endpoints
 @app.route('/resources') # 127.0.0.1:5000/resources
 def resources():
@@ -32,5 +42,9 @@ def resources():
 ########################################
 #           Initialization
 ########################################
+
+import threading
+threading.Thread(target=app.run, kwargs={'host':'0.0.0.0','port':80}).start()
+
 if __name__ == "__main__":
   app.run(debug=True)
