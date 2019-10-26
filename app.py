@@ -32,11 +32,10 @@ def predict(filepath):
     return CATEGORIES[int(predictions[0][0])]
 
 
-filepath = os.path.join("testing_cat.jpg")
-result = predict(filepath)
-print(result)
-
-
+@app.route("/")
+def index():
+    """Return the homepage."""
+    return render_template("index.html")
 
 @app.route("/filelink/<file_name>")
 def filelink(file_name):
