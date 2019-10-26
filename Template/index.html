@@ -34,7 +34,9 @@
                   <label for="example-form"> Enter animal image: </label>
                   <input class="form-control" id="example-form-input" name="example-form" type="text">
                 </div>
-                <button id="submit" type="submit" class="btn btn-default">Submit</button>
+                <!-- <button id="submit" type="submit" class="btn btn-default">Submit</button> -->
+                <input type='file' onchange="loadFile(event);" />
+                <img id="blah" style="size:500px" alt="your image" src="#" />
               </form>
             </div>
             </div>

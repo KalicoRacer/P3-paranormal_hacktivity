@@ -1,50 +1,41 @@
-########################################
-#              Imports
-########################################
+# import necessary libraries
+import cv2
+import tensorflow as tf
+import os
+from tensorflow.keras.preprocessing import image
+import numpy as np
+from tensorflow import keras
+from keras.models import load_model
+from flask import (
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect)
 
-import socket
-print(socket.gethostbyname(socket.getfqdn(socket.gethostname())))
-
-from flask import Flask
 app = Flask(__name__)
 
-########################################
-#            Configuration
-########################################
 
-# set the project root directory as the static folder, you can set others.
-app = Flask(__name__, static_url_path='')
-app.config["CACHE_TYPE"] = "null"
-
-# Database Config (SQL Alchemy / PyMongo / other)
-
-########################################
-#               Routes
-########################################
-
-# Section 1 - HTML/Web Pages
-@app.route("/") # 127.0.0.1:5000/
-def home():
-    print('test')
-    return render_template("index.html")
+# create function to parse the image and predict
+def prepare(filepath):
+    IMG_SIZE = 100
+    x = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
+    x = cv2.resize(x, (IMG_SIZE,IMG_SIZE))
+    return x.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
 
-@app.route("/analyze")
-def analyze():
+def predict(a):
+    CATEGORIES = ['Dog','Cat']
+    model = load_model("catsdogs.model")
+    predictions = model.predict([prepare(filepath)])
+    return CATEGORIES[int(prediction[0][0])]
 
 
+@app.route("/filelink/<file_name>")
+def filelink(file_name):
+    result = predict(file_name)
+    return jsonify(result)
 
-# Section 2 - API Endpoints
-@app.route('/resources') # 127.0.0.1:5000/resources
-def resources():
-  
-  
-########################################
-#           Initialization
-########################################
-
-import threading
-threading.Thread(target=app.run, kwargs={'host':'0.0.0.0','port':80}).start()
 
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run()
