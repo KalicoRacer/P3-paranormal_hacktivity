@@ -15,20 +15,27 @@ from flask import (
 
 app = Flask(__name__)
 
-
 # create function to parse the image and predict
 def prepare(filepath):
     IMG_SIZE = 100
     x = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
     x = cv2.resize(x, (IMG_SIZE,IMG_SIZE))
-    return x.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
-
-
-def predict(a):
+    x = x.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+    x = tf.cast(x, tf.float32)
+    return x
+    
+    
+def predict(filepath):    
     CATEGORIES = ['Dog','Cat']
     model = load_model("catsdogs.model")
     predictions = model.predict([prepare(filepath)])
-    return CATEGORIES[int(prediction[0][0])]
+    return CATEGORIES[int(predictions[0][0])]
+
+
+filepath = os.path.join("testing_cat.jpg")
+result = predict(filepath)
+print(result)
+
 
 
 @app.route("/filelink/<file_name>")
